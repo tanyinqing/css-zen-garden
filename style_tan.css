@@ -1,0 +1,197 @@
+/*这个是整体样式的通用设计*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /*通过百分比设置字体大小，具体的字体，以及没有这个字体时的替代字体*/
+    font: 75% georgia, sans-serif;
+    line-height: 1.88889;
+    color: #555753;
+    margin: 0;
+    padding: 0;
+}
+p {
+    margin-top: 0;
+    text-align: justify; /*段落 水平对齐*/
+}
+h3 {  /*标题的大小时正常的1.4倍*/
+    font: italic normal 1.4em georgia, sans-serif;
+    letter-spacing: 1px;  /*字母间隔*/
+    margin-bottom: 0;
+    color: #7D775C;
+}
+/*a:link - 普通的、未被访问的链接
+         a:visited - 用户已访问的链接
+                     a:hover - 鼠标指针位于链接的上方
+                               a:active - 链接被点击的时刻*/
+a:link {
+    font-weight: bold;
+    text-decoration: none; /*文本装饰 比如下划线*/
+    color: #B7A5DF;
+}
+a:visited {
+    font-weight: bold;
+    text-decoration: none;
+    color: red;
+}
+a:hover, a:focus, a:active {   /*这个是并集选择器*/
+    text-decoration: underline;
+    color: #555753;
+}
+abbr {  /*边框*/
+    border-bottom: none;
+}
+.intro { /*表头的宽度*/
+    min-width: 470px;
+    width: 100%;
+}
+
+/*第一标题的样式*/
+header h1 {   /*派生选择器 嵌套关系 CSS Zen Garden就是这个标题*/
+    /*背景 透明色 背景*/
+    background: transparent url(image/title1.jpg) no-repeat top left;
+    margin-top: 10px;
+    display: block; /*变块级元素  宽和高 就起作用了  h1是块级元素*/
+    width: 219px;
+    height: 87px;
+    position: relative;
+    left: 500px;
+   /* float: left;*/  /*向左浮动  浮动拖离了标准流  下一行会占据改行的位置*/
+    color: red;
+   /* text-indent: 100%; *//* 文本缩进 text-indent 可以使用所有长度单位，包括百分比值。*/
+    white-space: nowrap;
+    /*上面的规则告诉浏览器按照平常的做法去处理：丢掉多余的空白符。如果给定这个值，换行字符
+    （回车）会转换为空格，一行中多个空格的序列也会转换为一个空格。*/
+    overflow:hidden;/* 超出部分要隐藏 css就不见了*/
+}
+/*
+第二个标题的样式*/
+header h2 { /*这个是副标题*/
+    /*background: transparent url(image/title2.jpg) no-repeat top left;*/
+    margin-top: 8px;
+    margin-bottom: 40px;
+    width: 200px;
+    height: 20px;
+   /* float: right;*/ /*向右浮动 所以找不到了*/
+    position: relative;
+    left: 550px;
+    top: 5px;
+    white-space: nowrap;
+   /* overflow: hidden;*/
+}
+
+header { /*这个是标题头 的高度*/
+    padding-top: 20px;
+    height: 87px;
+}
+/*
+第一段字体的修改*/
+.summary { /*这个是第一段 清除浮动 并向左浮动*/
+   /* background: url("image/OneDuan.jpg") no-repeat;*/
+    /*clear: both;*/
+    margin: 20px 20px 20px 10px;
+    position: relative;
+    left: 350px;
+    top: 50px;
+    width: 160px;
+
+  /*  float: left;*/
+}
+.summary p {/*{ 第一段的字体是斜体 1.1倍 居中*/
+    font: italic 1.1em/2.2 georgia;
+    text-align: center;
+}
+.preamble {  /*这个是第二段 有标题 有段落*/
+    clear: right;
+    padding: 0px 10px 0 10px;
+    position: relative;
+    left: 350px;
+    width: 360px;
+}
+.supporting {  /*这个是第三段*/
+    padding-left: 10px;
+    margin-bottom: 40px;
+    width: 400px;
+    text-align: center;
+}
+/*
+下面的5个导航条*/
+footer {  /*标记选择器  HTML CSS CC A11y GH  主要是这几个链接 以下是对齐方式*/
+    text-align: center; /*让内容居中*/
+}
+footer a:link, footer a:visited {  /*这个是右边界*/
+    margin-right: 20px;
+}
+/*这个是右边的导航条*/
+
+.sidebar {  /*相对定位  据左600像素  距离左上角0 0  */
+    margin-left: 600px;
+    position: absolute;
+    top: 100px;
+    width: 500px;  ;
+}
+.sidebar .wrapper {  /*派生选择器  右边的标题栏*/
+    font: 10px verdana, sans-serif;
+    background: transparent url(http://csszengarden.com/001/paper-bg.jpg) top left repeat-y;
+    padding: 10px;
+    margin-top: 150px;
+    width: 130px;
+}
+.sidebar h3.select {  /*右边导航栏标题被选中的时候的颜色变化*/
+    background: transparent url(http://csszengarden.com/001/h3.gif) no-repeat top left;
+    margin: 10px 0 5px 0;
+    width: 97px;
+    height: 16px;
+
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.sidebar h3.archives {
+    background: transparent url(http://csszengarden.com/001/h5.gif) no-repeat top left;
+    margin: 25px 0 5px 0;
+    width:57px;
+    height: 14px;
+
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.sidebar h3.resources {
+    background: transparent url(http://csszengarden.com/001/h6.gif) no-repeat top left;
+    margin: 25px 0 5px 0;
+    width:63px;
+    height: 10px;
+
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.sidebar ul { /*无序列表中的一列*/
+    margin: 0;
+    padding: 0;
+}
+.sidebar li {
+    line-height: 1.3em;
+    background: transparent url(http://csszengarden.com/001/cr1.gif) no-repeat top center;
+    display: block;
+    padding-top: 5px;
+    margin-bottom: 5px;
+    list-style-type: none;  /*去掉无序列表中的小点*/
+}
+.sidebar li a:link {
+    color: #988F5E;
+}
+.sidebar li a:visited {
+    color: #B3AE94;
+}
+.extra1 {  /*绝对布局 右上边的标题*/
+    background: transparent url(http://csszengarden.com/001/cr2.gif) top left no-repeat;
+    position: absolute;
+    top: 40px;
+    left: 400px;
+    width: 148px;
+    height: 110px;
+}

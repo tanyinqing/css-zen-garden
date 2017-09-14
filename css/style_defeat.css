@@ -82,7 +82,7 @@ header h2 { /*这个是副标题*/
 	margin-bottom: 40px;
 	width: 200px;
 	height: 18px;
-	float: right; /*向右浮动 所以找不到了*/
+	/*float: right;*/ /*向右浮动 所以找不到了*/
 
 	text-indent: 100%;
 	white-space: nowrap;
@@ -116,7 +116,7 @@ footer {  /*标记选择器  HTML CSS CC A11y GH  主要是这几个链接 以�
 footer a:link, footer a:visited {  /*这个是右边界*/
 	margin-right: 20px;
 }
-.sidebar {  /*相对定位  据左600像素  距离左上角0 0*/
+.sidebar {  /*相对定位  据左600像素  距离左上角0 0  */
 	margin-left: 600px;
 	position: absolute;
 	top: 0;
