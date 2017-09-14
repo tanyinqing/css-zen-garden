@@ -1,9 +1,0 @@
-
-* {
-    margin: 0;
-}
-/*这个是类别选择器  和标记选择器的伪类组成的派生选择器*/
-.summary p::first-line{
- color: red;
-}
-
