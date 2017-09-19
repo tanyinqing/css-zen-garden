@@ -6,11 +6,11 @@
     padding: 0;
 }
 
-abbr {
+abbr { /*去掉下划线。当弹出提示框时*/
     text-decoration: none;
 }
 
-#css-zen-garden {
+#css-zen-garden {  /*这是一个id选择器 body应用的样式*/
     background: #ddd;
     color: #fff;
     font-family: Verdana, sans-serif;
@@ -18,16 +18,16 @@ abbr {
     font-weight: 100;
 }
 
-.page-wrapper {
+.page-wrapper {  /*文章，除了额外的图片采用的样式*/
     background: #000 url("bg.png") no-repeat;
-    left: 100px;
+    left: 100px;/*相对左边偏移100px给主标题  相对于自己原来的位置发生位置的偏移 没有脱离标准流 不会重叠*/
     position: relative;
     width: 200px;
 }
 
 a:link {
     color: antiquewhite;
-    text-decoration: none;
+    text-decoration: none; /*去掉下划线*/
 }
 
 a:visited {
@@ -38,7 +38,7 @@ a:hover {
     background: #333;
 }
 
-h1 {
+h1 {  /*这个是主标题*/
     color: #000;
     font-family: 'Wire One', sans-serif;
     font-size: 80px;
@@ -46,58 +46,58 @@ h1 {
     left: -80px;
     position: relative;
     writing-mode: tb-rl;
-    opacity: .3;
+    opacity: .3;  /*这个是不透明度*/
 }
 
-h2 {
+h2 {  /*这个是副标题*/
     color: #fff;
     font-family: 'Tangerine', serif;
     font-size: 22px;
     margin-bottom: 30px;
     text-align: center;
-    word-spacing: 5px;
+    word-spacing: 5px; /*字间距*/
 }
 
 .summary,
 .preamble,
-.main {
+.main {  /*并集 类别选择器 全文采用的样式*/
     background: #000;
     opacity: .8;
     width: 500px;
 }
 
-.sidebar {
+.sidebar {  /*右上角的选项卡*/
     background: #000;
     height: 330px;
     left: 200px;
     opacity: .8;
-    position: absolute;
+    position: absolute;  /*绝对布局 脱离了标准流 相对于距离它 最近的 已定位 的 祖先元素 进行移动*/
     top: 0;
     width: 300px;
 }
 
-h3 {
+h3 {  /*每一个段落的标题*/
     padding: 20px 10px 5px;
 }
 
-p {
+p { /*每一个段落*/
     padding: 3px 10px;
     line-height: 16px;
 }
 
 h3.select,
 h3.archives,
-h3.resources {
+h3.resources {  /*每一个段落的标题*/
     margin: 20px 0 0;
     padding: 0;
     text-align: center;
 }
 
-ul {
+ul {  /*选项卡下去掉下划的横线*/
     list-style: none;
 }
 
-#design-selection li {
+#design-selection li {  /*这个是选项卡前面的点 隐藏*/
     font-size: 0;
     height: 14px;
     visibility: hidden;
@@ -106,7 +106,7 @@ ul {
 #design-selection li a {
     font-size: 12px;
     line-height: 14px;
-    overflow: hidden;
+    overflow: hidden;  /*装不下的部分隐藏*/
     visibility: visible;
     width: 146px;
 }
@@ -120,8 +120,8 @@ ul {
     float: right;
 }
 
-li.next,
-li.viewall {
+li.next,  /*第二 第三选项卡的派生选择器*/
+li.viewall { /*对内行内 对外块级*/
     display: inline-block;
 }
 
@@ -148,11 +148,11 @@ li.viewall a {
     text-align: center;
 }
 
-.requirements {
+.requirements {  /*最后一段*/
     padding-bottom: 20px;
 }
 
-footer {
+footer {  /*底部导航栏*/
     border-top: #fff 1px solid;
     font-size: 16px;
     height: 20px;
@@ -164,15 +164,16 @@ footer a {
     margin-right: 10px;
 }
 
+/*添加自适应  在屏幕宽度小于500px时适应的样式*/
 @media only screen and (max-width: 500px) {
-    .page-wrapper {
+    .page-wrapper {  /*文章，除了额外的图片采用的样式*/
         background: #000 url("bg-small.png") no-repeat;
-        background-size: contain;
+        background-size: contain;  /*图片不剪切 等比例缩小*/
         left: 0;
         opacity: .8;
         position: relative;
         top: 150px;
-        width: 100%;
+            width: 100%;  /*宽度是全部*/
     }
 
     h1 {
@@ -199,7 +200,7 @@ footer a {
         text-align: center;
         top: -150px;
         width: 100%;
-        word-spacing: 5px;
+        word-spacing: 5px; /*字间距*/
     }
 
     .summary,
@@ -210,7 +211,7 @@ footer a {
         width: 100%;
     }
 
-    .sidebar {
+    .sidebar { /*选项卡*/
         background: #000;
         opacity: .8;
         position: static;
